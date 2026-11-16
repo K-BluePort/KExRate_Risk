@@ -15,6 +15,9 @@
 | 2026-11-16 | P05 | "진행" (등급별 시나리오 CSV와 결과 JSON) | `scripts/make_scenarios.py`, `data/scenario_*.csv`, `docs/sample_result_*.json`, `data/README.md`, `tests/test_fx.py` | 22건 통과 | 커밋 `eda73a2` |
 | 2026-11-16 | P06 | "진행" (README 확정) | `README.md` | 새로 clone해 명령 재현, 22건 통과 | 커밋 `2b1c115`, `9b5faf5` |
 | 2026-11-16 | P07 | "진행" (발표자료 8장) | `docs/presentation.pptx`, `docs/presentation.pdf` | 파일 검증 통과, 렌더링 육안 확인 | 이 커밋 |
+| 2026-11-16 | P08 | "점검" → "권장대로 진행해줘" → "만들었음, push 진행" | 커밋 작성자 이메일을 noreply로 변경, 로그의 로컬 경로 제거 | `git grep` 비밀정보 0건, 공개 clone에서 22건 통과 | https://github.com/K-BluePort/KExRate_Risk |
+| 2026-11-16 | P09 | "원안대로 진행해줘" | `repo_url.txt`(LMS 제출용, 저장소 미포함) | - | 로컬 파일 |
+| 2026-11-16 | - | "발표자료 제출 상태 갱신해서 push해줘" | `docs/presentation.pptx`, `docs/presentation.pdf` | 파일 검증 통과 | 이 커밋 |
 
 실행 방법: `python -m unittest` (Python 3.12, 외부 패키지 없음)
 
