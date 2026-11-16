@@ -19,6 +19,8 @@
 | 2026-11-16 | P09 | "원안대로 진행해줘" | `repo_url.txt`(LMS 제출용, 저장소 미포함) | - | 로컬 파일 |
 | 2026-11-16 | - | "발표자료 제출 상태 갱신해서 push해줘" | `docs/presentation.pptx`, `docs/presentation.pdf` | 파일 검증 통과 | 이 커밋 |
 | 2026-11-16 | 선택 가산 | "제시된 그래프 화면을 만들려고 해" (matplotlib PNG 그래프) | `scripts/plot_result.py`, `docs/charts/*.png`, `README.md`, `requirements.txt`, `tests/test_fx.py` | 23건 통과 (matplotlib 없으면 1건 skip) | 이 커밋 |
+| 2026-11-16 | 선택 가산 | "matplotlib를 사용할려면" → "README에 반영하고 push해줘" | `README.md`(가상환경 설치 안내) | 새 clone에서 안내 명령 재현, 23건 통과 | 커밋 `ef80abd` |
+| 2026-11-16 | 선택 가산 | "둘다 진행" (발표자료에 그래프 장 추가, 테스트 건수 표기 통일) | `docs/presentation.pptx`, `docs/presentation.pdf`, `README.md` | 파일 검증 통과, 9장 렌더링 확인 | 이 커밋 |
 
 실행 방법: `python -m unittest` (Python 3.12, 외부 패키지 없음)
 
