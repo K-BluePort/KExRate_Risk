@@ -12,6 +12,7 @@
 | 2026-11-16 | P01 | "새 폴더에 과제용 저장소 만들어줘 : <새 폴더> 이용" | `.gitignore`(비밀정보 제외 규칙 추가), 패키지 압축 해제 | 4건 통과 (`discover -s tests`) | `git init`, 기존 KExRATE 저장소와 분리 |
 | 2026-11-16 | P02 | "P02 진행해줘" (코드 리뷰, D1·D6 수정) | `src/fx_core.py`, `main.py`, `src/__init__.py`, `tests/__init__.py`, `tests/test_fx.py` | `python -m unittest` 9건 통과 | 커밋 `5bd25d3` |
 | 2026-11-16 | P03 | "커밋하고 p03" (TC01~TC04 테스트 보강) | `tests/test_fx.py` | 21건 통과, 부등호 변형 3종을 모두 감지 | 커밋 `e6f1fc2` |
+| 2026-11-16 | P05 | "진행" (등급별 시나리오 CSV와 결과 JSON) | `scripts/make_scenarios.py`, `data/scenario_*.csv`, `docs/sample_result_*.json`, `data/README.md`, `tests/test_fx.py` | 22건 통과 | 이 커밋 |
 
 실행 방법: `python -m unittest` (Python 3.12, 외부 패키지 없음)
 

@@ -154,4 +154,18 @@ class ReproTest(unittest.TestCase):
         expected = json.loads((root / 'docs' / 'sample_result.json').read_text(encoding='utf-8'))
         self.assertEqual(calculate(load_rates(root / 'data' / 'sample_rates.csv')), expected)
 
+class ScenarioFilesTest(unittest.TestCase):
+    """P05: 등급별 시나리오 CSV가 의도한 등급과 커밋된 JSON을 재현한다."""
+    def test_scenarios(self):
+        import json, pathlib
+        root = pathlib.Path(__file__).resolve().parent.parent
+        expected_risk = {'normal': 'NORMAL', 'caution': 'CAUTION', 'risk': 'RISK', 'critical': 'CRITICAL'}
+        for name, risk in expected_risk.items():
+            with self.subTest(name=name):
+                result = calculate(load_rates(root / 'data' / f'scenario_{name}.csv'))
+                saved = json.loads((root / 'docs' / f'sample_result_{name}.json').read_text(encoding='utf-8'))
+                self.assertEqual(result['risk'], risk)
+                self.assertEqual(result, saved)
+                self.assertEqual(result['source'], 'SAMPLE_NOT_OFFICIAL')
+
 if __name__ == '__main__': unittest.main()

@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-11-13",
+  "current": 1330.15,
+  "avg10": 1388.79,
+  "avg3": 1400.1548,
+  "deviation_pct": -4.9998,
+  "risk": "CAUTION",
+  "safety_pct": 3.0,
+  "basis": 1388.79,
+  "calculated": 1347.1263,
+  "recommended": 1345,
+  "observations_3m": 67,
+  "source": "SAMPLE_NOT_OFFICIAL"
+}
