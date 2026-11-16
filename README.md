@@ -75,6 +75,7 @@ main.py                   CLI
 src/fx_core.py            계산 엔진 (로드·검증·Risk 판정)
 data/                     가상 샘플 CSV (기본 1종 + 등급별 4종), data/README.md
 docs/sample_result*.json  샘플별 기대 결과
+docs/presentation.pptx/.pdf 발표자료 8장
 docs/agent_log.md         LLM 코딩 에이전트 실행 기록
 scripts/make_scenarios.py 시나리오 CSV 재생성
 tests/test_fx.py          단위 테스트 22건
