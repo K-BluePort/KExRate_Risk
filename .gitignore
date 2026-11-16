@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+*.key
+result.json
+*.bak
+*.sql
+*인증키*
+# 비밀정보 방지: txt 기본 제외, 필요한 파일만 예외
+*.txt
+!requirements.txt
+!repo_url.txt
