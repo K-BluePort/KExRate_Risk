@@ -2,7 +2,7 @@
 
 ## 출처 구분
 
-- **초안(ChatGPT)**: 최초 패키지(`src/fx_core.py`, `main.py`, `data/sample_rates.csv`, 테스트 4건, README)는 ChatGPT가 작성했습니다. 첫 커밋 `5bd25d3`에 포함되어 있습니다.
+- **초안(ChatGPT)**: 최초 패키지(`src/fx_core.py`, `main.py`, `data/sample_rates.csv`, 테스트 4건, README)는 ChatGPT가 작성했습니다. 첫 커밋 `2755766`에 포함되어 있습니다.
 - **Claude Code (Claude Sonnet 5.5)**: 아래 기록의 코드 리뷰·수정·테스트 보강은 Claude Code로 수행했습니다. 커밋 메시지에 `Co-Authored-By` 표기가 있습니다.
 
 ## 실행 이력
@@ -10,10 +10,10 @@
 | 날짜 | 단계 | 실제 입력 프롬프트 | 변경 파일 | 테스트 결과 | 증빙 |
 |---|---|---|---|---|---|
 | 2026-11-16 | P01 | "새 폴더에 과제용 저장소 만들어줘 : <새 폴더> 이용" | `.gitignore`(비밀정보 제외 규칙 추가), 패키지 압축 해제 | 4건 통과 (`discover -s tests`) | `git init`, 기존 KExRATE 저장소와 분리 |
-| 2026-11-16 | P02 | "P02 진행해줘" (코드 리뷰, D1·D6 수정) | `src/fx_core.py`, `main.py`, `src/__init__.py`, `tests/__init__.py`, `tests/test_fx.py` | `python -m unittest` 9건 통과 | 커밋 `5bd25d3` |
-| 2026-11-16 | P03 | "커밋하고 p03" (TC01~TC04 테스트 보강) | `tests/test_fx.py` | 21건 통과, 부등호 변형 3종을 모두 감지 | 커밋 `e6f1fc2` |
-| 2026-11-16 | P05 | "진행" (등급별 시나리오 CSV와 결과 JSON) | `scripts/make_scenarios.py`, `data/scenario_*.csv`, `docs/sample_result_*.json`, `data/README.md`, `tests/test_fx.py` | 22건 통과 | 커밋 `ff79473` |
-| 2026-11-16 | P06 | "진행" (README 확정) | `README.md` | 새로 clone해 명령 재현, 22건 통과 | 커밋 `250f2c7`, `58bf637` |
+| 2026-11-16 | P02 | "P02 진행해줘" (코드 리뷰, D1·D6 수정) | `src/fx_core.py`, `main.py`, `src/__init__.py`, `tests/__init__.py`, `tests/test_fx.py` | `python -m unittest` 9건 통과 | 커밋 `2755766` |
+| 2026-11-16 | P03 | "커밋하고 p03" (TC01~TC04 테스트 보강) | `tests/test_fx.py` | 21건 통과, 부등호 변형 3종을 모두 감지 | 커밋 `71b9f03` |
+| 2026-11-16 | P05 | "진행" (등급별 시나리오 CSV와 결과 JSON) | `scripts/make_scenarios.py`, `data/scenario_*.csv`, `docs/sample_result_*.json`, `data/README.md`, `tests/test_fx.py` | 22건 통과 | 커밋 `eda73a2` |
+| 2026-11-16 | P06 | "진행" (README 확정) | `README.md` | 새로 clone해 명령 재현, 22건 통과 | 커밋 `2b1c115`, `9b5faf5` |
 | 2026-11-16 | P07 | "진행" (발표자료 8장) | `docs/presentation.pptx`, `docs/presentation.pdf` | 파일 검증 통과, 렌더링 육안 확인 | 이 커밋 |
 
 실행 방법: `python -m unittest` (Python 3.12, 외부 패키지 없음)
