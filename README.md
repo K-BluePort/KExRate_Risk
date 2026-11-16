@@ -55,13 +55,30 @@ python -m unittest -v
 
 ## 그래프 (선택)
 
-그래프만 matplotlib이 필요합니다. 계산과 테스트는 설치 없이 동작합니다.
+그래프만 matplotlib(3.8 이상)이 필요합니다. 계산과 테스트는 설치 없이 동작합니다.
+`pip`이 다른 Python을 가리키거나 "externally-managed-environment" 오류가 나는 환경이 있으므로, 가상환경을 만들어 `python -m pip`로 설치하는 방법을 권장합니다.
+
+**Windows (PowerShell)**
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install "matplotlib>=3.8"
+.\.venv\Scripts\python scripts\plot_result.py --csv data\scenario_critical.csv --output docs\charts\chart_critical.png
+.\.venv\Scripts\python scripts\plot_result.py --all   # 모든 샘플을 docs\charts\에 생성
+.\.venv\Scripts\python -m unittest                    # 그래프 테스트 포함 23건
+```
+
+**macOS / Linux**
 
 ```bash
-pip install matplotlib
-python scripts/plot_result.py --csv data/scenario_critical.csv --output docs/charts/chart_critical.png
-python scripts/plot_result.py --all   # 모든 샘플을 docs/charts/에 생성
+python3 -m venv .venv
+.venv/bin/python -m pip install "matplotlib>=3.8"
+.venv/bin/python scripts/plot_result.py --all
 ```
+
+- `.venv/`는 `.gitignore`에 포함되어 커밋되지 않습니다.
+- 한글 글꼴은 Windows는 Malgun Gothic, macOS는 AppleGothic을 쓰고, Linux는 NanumGothic 또는 Noto Sans CJK KR이 있어야 합니다. 없으면 한글이 깨져 보일 수 있습니다.
+- matplotlib 없이 실행하면 `오류: matplotlib이 필요합니다` 메시지가 나옵니다.
 
 ![CRITICAL 시나리오](docs/charts/chart_scenario_critical.png)
 
