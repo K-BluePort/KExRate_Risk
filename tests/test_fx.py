@@ -168,4 +168,24 @@ class ScenarioFilesTest(unittest.TestCase):
                 self.assertEqual(result, saved)
                 self.assertEqual(result['source'], 'SAMPLE_NOT_OFFICIAL')
 
+def _has_matplotlib():
+    try:
+        import matplotlib  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+@unittest.skipUnless(_has_matplotlib(), 'matplotlib 미설치: 그래프 테스트 건너뜀')
+class PlotTest(unittest.TestCase):
+    def test_plot_creates_png(self):
+        import subprocess, sys, pathlib
+        root = pathlib.Path(__file__).resolve().parent.parent
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, 'c.png')
+            subprocess.run([sys.executable, 'scripts/plot_result.py', '--csv', 'data/scenario_risk.csv', '--output', out],
+                           cwd=root, check=True, capture_output=True)
+            with open(out, 'rb') as f:
+                self.assertEqual(f.read(4)[1:], b'PNG')  # PNG 시그니처
+            self.assertGreater(os.path.getsize(out), 10000)
+
 if __name__ == '__main__': unittest.main()

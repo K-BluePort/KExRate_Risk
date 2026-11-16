@@ -18,6 +18,7 @@
 | 2026-11-16 | P08 | "점검" → "권장대로 진행해줘" → "만들었음, push 진행" | 커밋 작성자 이메일을 noreply로 변경, 로그의 로컬 경로 제거 | `git grep` 비밀정보 0건, 공개 clone에서 22건 통과 | https://github.com/K-BluePort/KExRate_Risk |
 | 2026-11-16 | P09 | "원안대로 진행해줘" | `repo_url.txt`(LMS 제출용, 저장소 미포함) | - | 로컬 파일 |
 | 2026-11-16 | - | "발표자료 제출 상태 갱신해서 push해줘" | `docs/presentation.pptx`, `docs/presentation.pdf` | 파일 검증 통과 | 이 커밋 |
+| 2026-11-16 | 선택 가산 | "제시된 그래프 화면을 만들려고 해" (matplotlib PNG 그래프) | `scripts/plot_result.py`, `docs/charts/*.png`, `README.md`, `requirements.txt`, `tests/test_fx.py` | 23건 통과 (matplotlib 없으면 1건 skip) | 이 커밋 |
 
 실행 방법: `python -m unittest` (Python 3.12, 외부 패키지 없음)
 

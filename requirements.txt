@@ -1,1 +1,3 @@
-# Python 3.11+ 표준 라이브러리만 사용 (외부 패키지 없음)
+# Python 3.11+ 표준 라이브러리만 사용 (계산·CLI·테스트에는 외부 패키지 없음)
+# 선택: 그래프(scripts/plot_result.py)만 matplotlib이 필요하다.
+#   pip install "matplotlib>=3.8"

@@ -15,6 +15,7 @@ CSV의 환율 이력으로 3개월 평균, 최근 10개 관측값 평균, 괴리
 - Rolling 3개월 평균, 최근 10개 관측값 평균, 괴리율 계산
 - Risk 등급(NORMAL/CAUTION/RISK/CRITICAL) 판정과 5원 단위 내림 권장환율
 - `--output`으로 JSON 저장, 입력 오류 시 메시지 출력 후 종료 코드 1
+- (선택) 환율 추이·3개월 평균·Risk 경계선·권장환율을 한 장에 보여주는 PNG 그래프
 
 ## 실행 방법
 
@@ -52,6 +53,20 @@ python -m unittest -v
 }
 ```
 
+## 그래프 (선택)
+
+그래프만 matplotlib이 필요합니다. 계산과 테스트는 설치 없이 동작합니다.
+
+```bash
+pip install matplotlib
+python scripts/plot_result.py --csv data/scenario_critical.csv --output docs/charts/chart_critical.png
+python scripts/plot_result.py --all   # 모든 샘플을 docs/charts/에 생성
+```
+
+![CRITICAL 시나리오](docs/charts/chart_scenario_critical.png)
+
+회색 띠가 Rolling 3개월 구간이고, 점선은 3개월 평균 대비 -3/-7/-10% 경계, 굵은 선이 권장환율입니다. 다른 등급은 `docs/charts/`에 있습니다.
+
 ## 정책
 
 괴리율 = (현재 환율 / 3개월 평균 − 1) × 100
@@ -78,12 +93,14 @@ docs/sample_result*.json  샘플별 기대 결과
 docs/presentation.pptx/.pdf 발표자료 8장
 docs/agent_log.md         LLM 코딩 에이전트 실행 기록
 scripts/make_scenarios.py 시나리오 CSV 재생성
-tests/test_fx.py          단위 테스트 22건
+scripts/plot_result.py    그래프 PNG 생성 (matplotlib 필요)
+docs/charts/              등급별 그래프 PNG
+tests/test_fx.py          단위 테스트 23건
 ```
 
 ## 테스트
 
-`python -m unittest`로 22건을 실행합니다.
+`python -m unittest`로 23건을 실행합니다. 그래프 테스트 1건은 matplotlib이 없으면 건너뜁니다(22건 실행).
 
 | 구분 | 내용 |
 |---|---|
